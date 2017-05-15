@@ -1,51 +1,51 @@
 #dokuwiki__sitetools.namespacesearch__container {
-	font-size: 1em;
+    font-size: 1em;
 }
 
 div.namespacesearch__container form.search {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 div.namespacesearch__container form.search div.no {
-	display: inline-block;
+    display: inline-block;
 }
 
 select.namespacesearch_namespace {
-	background: transparent;
-	border: none;
-	display: inline-block;
-	left: 0px;
-	top: 0px;
-	bottom: 0px;
-	width: 49%;
-	z-index: 100;
-	position: absolute;
-	outline: none;
-	
-	-webkit-appearance: none;
-	margin: 2px;
-	padding: 0px 10px;
+    background: transparent;
+    border: none;
+    display: inline-block;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 49%;
+    z-index: 100;
+    position: absolute;
+    outline: none;
+    
+    -webkit-appearance: none;
+    margin: 2px;
+    padding: 0px 10px;
 }
 
 select.namespacesearch_namespace:hover {
-	background: __highlight__;
+    background: __highlight__;
 }
 
 select.namespacesearch_namespace option:nth-child(2n+1) {
-	background: __light__;
+    background: __light__;
 }
 
 select.namespacesearch_namespace option {
-	background: __highlight__;
+    background: __highlight__;
 }
 
 #dokuwiki__sitetools form.search #qsearch__in {
-	width: 36em;
+    width: 36em;
 }
 
 #dokuwiki__sitetools form.search select ~ #qsearch__in {
-	box-sizing: border-box;
-	padding-left: 50%;
+    box-sizing: border-box;
+    padding-left: 50%;
 }

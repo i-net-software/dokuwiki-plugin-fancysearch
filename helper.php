@@ -18,34 +18,34 @@ class helper_plugin_namespacesearch extends DokuWiki_Plugin {
         $lang = preg_quote($this->getLangCode(), '/');
         $cur_val = preg_replace('/^'.$lang.':/', '', $cur_val);
         
-		ob_start();
-		$QUERY = hsc(preg_replace('/ ?@\S+/','',$QUERY));
-		tpl_searchform(true, false);
-		$searchForm = ob_get_contents();
-		ob_end_clean();
+        ob_start();
+        $QUERY = hsc(preg_replace('/ ?@\S+/','',$QUERY));
+        tpl_searchform(true, false);
+        $searchForm = ob_get_contents();
+        ob_end_clean();
 
-		// Default Select
-		if ( count($namespaces) == 1 ) {
-		    // Only one of them. All of them.
-            	list($ns, $name, $class) = $namespaces[0];
+        // Default Select
+        if ( count($namespaces) == 1 ) {
+            // Only one of them. All of them.
+                list($ns, $name, $class) = $namespaces[0];
             $namespaceSelect =  '<input name="namespace" value="'.hsc($ns).'" type="hidden"/>';
-		} else {
+        } else {
             $namespaceSelect =  '<select class="namespacesearch_namespace" name="namespace">';
             foreach ($namespaces as $element) {
-            	list($ns, $name, $class) = $element;
+                list($ns, $name, $class) = $element;
                 $namespaceSelect .= '<option class="namespacesearch_ns_'.hsc($class).'" value="'.hsc($ns).'"'.($cur_val === $ns ? ' selected="selected"' : '').'>'.$name.'</option>';
             }
             $namespaceSelect .= '</select>';
-		}
+        }
 
-		// Insert reight at the beginning.
-		$searchForm = substr_replace($searchForm, $namespaceSelect, strpos($searchForm, '<input'), 0);
+        // Insert reight at the beginning.
+        $searchForm = substr_replace($searchForm, $namespaceSelect, strpos($searchForm, '<input'), 0);
 
-		if ( $return ) {
-			return '<div id="dokuwiki__sitetools" class="namespacesearch__container">'.$searchForm.'</div>';
-		} else {
-			print '<div class="namespacesearch__container">'.$searchForm.'</div>';
-		}
+        if ( $return ) {
+            return '<div id="dokuwiki__sitetools" class="namespacesearch__container">'.$searchForm.'</div>';
+        } else {
+            print '<div class="namespacesearch__container">'.$searchForm.'</div>';
+        }
     }
 
     private function translatedNamespace($id) {
